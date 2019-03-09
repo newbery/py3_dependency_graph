@@ -15,7 +15,7 @@ setuptools.setup(
   url="https://github.com/jam-world/py3_dependency_graph",
   packages=setuptools.find_packages(),
   install_requires=[
-    'git'
+    'git', 'jedi', 'networkx'
   ],
   classifiers=[
     "Programming Language :: Python :: 3",
