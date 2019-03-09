@@ -7,7 +7,7 @@ import sys
 
 from networkx.drawing.nx_agraph import to_agraph
 
-from infra.dependency_tool.dependency_analysis import FileStaticAnalysis
+from .dependency_analysis import FileStaticAnalysis
 
 SUPPORTED_FORMAT = ['dot', 'org', 'all', 'txt']
 
