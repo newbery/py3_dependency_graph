@@ -8,8 +8,8 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 
 setuptools.setup(
-  name="py3_dependency_graph",
-  version="0.0.5",
+  name="SDGraph",
+  version="0.0.1",
   author="Cha Chen",
   author_email="chencha92111@gmail.com",
   description="A simple jedi based python3 dependency analysis tool",

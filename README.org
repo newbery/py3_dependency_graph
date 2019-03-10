@@ -12,3 +12,35 @@
 * What is this tool for?
   This is just a simple python static dependency generate tool, It can help you generate the dependency graph
 find circular import.
+* Usage
+** Install the tool 
+   #+BEGIN_SRC sh :session default
+     python3 -m pip install --index-url https://test.pypi.org/simple/ py3_dependency_graph
+   #+END_SRC
+
+   #+RESULTS:
+   | Looking     | in        | indexes:                                                                                                                               | https://test.pypi.org/simple/ |           |                                                                     |         |                       |          |
+   | Requirement | already   | satisfied:                                                                                                                             | py3_dependency_graph          | in        | /Users/cha/simple_dependecy_graph                                   | (0.0.5) |                       |          |
+   | Collecting  | GitPython | (from                                                                                                                                  | py3_dependency_graph)         |           |                                                                     |         |                       |          |
+   | Using       | cached    | https://test-files.pythonhosted.org/packages/c5/25/0230c92899e2aba5b9a9f4a4824f7fc604d969a3237968e58a6c8ef0da10/GitPython-2.0.8.tar.gz |                               |           |                                                                     |         |                       |          |
+   | Requirement | already   | satisfied:                                                                                                                             | jedi                          | in        | /Users/cha/anaconda/envs/testInstallDep/lib/python3.7/site-packages | (from   | py3_dependency_graph) | (0.13.3) |
+   | Requirement | already   | satisfied:                                                                                                                             | networkx                      | in        | /Users/cha/anaconda/envs/testInstallDep/lib/python3.7/site-packages | (from   | py3_dependency_graph) | (2.2)    |
+   | =0.6.4      | (from     | GitPython->py3_dependency_graph)                                                                                                       |                               |           |                                                                     |         |                       |          |
+   | =0.6.4      | (from     | GitPython->py3_dependency_graph)                                                                                                       | (from                         | versions: | )                                                                   |         |                       |          |
+   | =0.6.4      | (from     | GitPython->py3_dependency_graph)                                                                                                       |                               |           |                                                                     |         |                       |          |
+
+** use case 
+   #+BEGIN_SRC sh :session default
+     python3 -m py3_dependency_graph.dependency_graph
+   #+END_SRC
+
+   #+RESULTS:
+   | Traceback            | (most                                                          | recent | call               | last):                        |                     |
+   | File                 | /Users/cha/anaconda/envs/testInstallDep/lib/python3.7/runpy.py | line   | 183,               | in                            | _run_module_as_main |
+   | mod_name,            | mod_spec,                                                      | code   | =                  | _get_module_details(mod_name, | _Error)             |
+   | File                 | /Users/cha/anaconda/envs/testInstallDep/lib/python3.7/runpy.py | line   | 109,               | in                            | _get_module_details |
+   | __import__(pkg_name) |                                                                |        |                    |                               |                     |
+   | from                 | .dependency_analysis                                           | import | FileStaticAnalysis |                               |                     |
+   | import               | git                                                            |        |                    |                               |                     |
+   | ModuleNotFoundError: | No                                                             | module | named              | 'git'                         |                     |
+
