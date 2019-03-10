@@ -1,12 +1,15 @@
 import setuptools
 
-with open("README.md", "r") as fh:
-  long_description = fh.read()
+# read the contents of your README file
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 
 setuptools.setup(
   name="py3_dependecy_graph",
-  version="0.0.1",
+  version="0.0.2",
   author="Cha Chen",
   author_email="chencha92111@gmail.com",
   description="A simple jedi based python3 dependency analysis tool",
@@ -15,7 +18,7 @@ setuptools.setup(
   url="https://github.com/jam-world/py3_dependency_graph",
   packages=setuptools.find_packages(),
   install_requires=[
-    'git', 'jedi', 'networkx'
+    'GitPython', 'jedi', 'networkx'
   ],
   classifiers=[
     "Programming Language :: Python :: 3",
