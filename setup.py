@@ -4,11 +4,11 @@ import setuptools
 from os import path
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
+  long_description = f.read()
 
 
 setuptools.setup(
-  name="py3_dependecy_graph",
+  name="py3_dependency_graph",
   version="0.0.2",
   author="Cha Chen",
   author_email="chencha92111@gmail.com",
