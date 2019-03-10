@@ -2,8 +2,8 @@
 #+OPTIONS: creator:nil d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t p:nil pri:nil
 #+OPTIONS: prop:nil stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
 #+TITLE: Dependency Report
-#+AUTHOR: Cha Chen
-#+EMAIL: chencha92111@gmail
+#+AUTHOR: your name
+#+EMAIL: your email
 #+LANGUAGE: en
 #+SELECT_TAGS: export
 #+EXCLUDE_TAGS: noexport
