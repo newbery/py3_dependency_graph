@@ -9,7 +9,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setuptools.setup(
   name="py3_dependency_graph",
-  version="0.0.2",
+  version="0.0.3",
   author="Cha Chen",
   author_email="chencha92111@gmail.com",
   description="A simple jedi based python3 dependency analysis tool",
@@ -17,6 +17,7 @@ setuptools.setup(
   long_description_content_type="text/markdown",
   url="https://github.com/jam-world/py3_dependency_graph",
   packages=setuptools.find_packages(),
+  script=['script/simple_dependency_graph'],
   install_requires=[
     'GitPython', 'jedi', 'networkx'
   ],
