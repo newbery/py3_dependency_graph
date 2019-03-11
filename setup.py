@@ -9,7 +9,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setuptools.setup(
   name="SDGraph",
-  version="0.0.2",
+  version="0.0.3",
   author="Cha Chen",
   author_email="chencha92111@gmail.com",
   description="A simple jedi based python3 dependency analysis tool",
@@ -19,7 +19,7 @@ setuptools.setup(
   packages=setuptools.find_packages(),
   scripts=['bin/SDGraph'],
   install_requires=[
-    'GitPython', 'jedi', 'networkx'
+    'GitPython', 'jedi', 'networkx', 'pygraphviz'
   ],
   classifiers=[
     "Programming Language :: Python :: 3",

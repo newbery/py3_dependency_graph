@@ -14,10 +14,10 @@
 find circular import.
 * Usage
 ** Requirement 
-   You will need the git and graphiz for the tool
+   You will need the git and graphviz for the tool
    #+BEGIN_SRC sh :session default
      apt-get update
-     apt-get install git graphiz-dev
+     apt-get install git graphviz graphviz-dev
    #+END_SRC
 ** Install the tool 
    #+BEGIN_SRC sh :session default

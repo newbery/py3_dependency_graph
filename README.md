@@ -1,15 +1,15 @@
 
 # Table of Contents
 
-1.  [What is this tool for?](#org504d1e6)
-2.  [Usage](#org70a7c56)
-    1.  [Requirement](#org632a91b)
-    2.  [Install the tool](#org369133b)
-    3.  [use case](#orgdefa063)
+1.  [What is this tool for?](#org560c33d)
+2.  [Usage](#org4fa6ae3)
+    1.  [Requirement](#org52604c3)
+    2.  [Install the tool](#orgbf52507)
+    3.  [use case](#org23288c1)
 
 
 
-<a id="org504d1e6"></a>
+<a id="org560c33d"></a>
 
 # What is this tool for?
 
@@ -17,29 +17,29 @@
 find circular import.
 
 
-<a id="org70a7c56"></a>
+<a id="org4fa6ae3"></a>
 
 # Usage
 
 
-<a id="org632a91b"></a>
+<a id="org52604c3"></a>
 
 ## Requirement
 
-You will need the git and graphiz for the tool
+You will need the git and graphviz for the tool
 
     apt-get update
-    apt-get install git graphiz-dev
+    apt-get install git graphviz graphviz-dev
 
 
-<a id="org369133b"></a>
+<a id="orgbf52507"></a>
 
 ## Install the tool
 
     pip install SDGraph
 
 
-<a id="orgdefa063"></a>
+<a id="org23288c1"></a>
 
 ## use case
 
