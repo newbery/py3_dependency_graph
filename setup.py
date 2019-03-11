@@ -9,7 +9,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setuptools.setup(
   name="SDGraph",
-  version="0.0.3",
+  version="0.0.5",
   author="Cha Chen",
   author_email="chencha92111@gmail.com",
   description="A simple jedi based python3 dependency analysis tool",
