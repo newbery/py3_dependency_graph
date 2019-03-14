@@ -94,15 +94,16 @@ class DependencyGraph():
     self.save_list(name)
 
 
-def check_args(args):
-  if len(args.filenames) <= 0:
-    print('You need to give at one python file to analysis')
-    sys.exit(1)
+def is_args_valid(args):
+  if args.filenames is None or len(args.filenames) <= 0:
+    print('You need to give at least one python file to analysis\n\n')
+    return False
 
   if not all(format in SUPPORTED_FORMAT for format in args.output_format):
-    print('All {0} should in list: {1}'.format(args.output_format,
+    print('All {0} should in list: {1}\n\n'.format(args.output_format,
                                                SUPPORTED_FORMAT))
-    sys.exit(1)
+    return False
+  return True
 
 
 def parse_args():
@@ -127,7 +128,10 @@ def parse_args():
     help='output file name for the dependency list')
 
   args = parser.parse_args()
-  check_args(args)
+  if not is_args_valid(args):
+    parser.print_help()
+    sys.exit(2)
+
   return args
 
 
