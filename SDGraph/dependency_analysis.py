@@ -82,7 +82,7 @@ class FileStaticAnalysis():
             }
       except:
         print("[WARNING] ", self.file_path, script._pos)
-    raise StopIteration
+    # raise StopIteration
 
   def get_graph(self):
     for bag in self.var_def_iter():

@@ -4,12 +4,16 @@
 import argparse
 import os
 import sys
+import itertools
 
 from networkx.drawing.nx_agraph import to_agraph
 
 from .dependency_analysis import FileStaticAnalysis
 
 SUPPORTED_FORMAT = ['dot', 'org', 'all', 'txt']
+
+COLORS = ['#a3c1c2', '#afc0e0', '#debbd4', '#e0c0a8', '#9be0e6', '#cae3e9', '#d4eac7']
+COLORS = ['#b3cde3', '#ccebc5', '#decbe4', '#fed9a6', '#ffffcc', '#e5d8bd', '#fddaec']
 
 
 class DependencyGraph():
@@ -39,7 +43,8 @@ class DependencyGraph():
       file_realpath = os.path.join(DependencyGraph.GIT_ROOT, file_relpath)
       file_analyzer = FileStaticAnalysis(file_realpath, G=self.G)
       self.G = file_analyzer.get_graph()
-      self.files |= (set(self.G.node) - self.explored)
+      # import pdb; pdb.set_trace()
+      self.files |= (set(self.G.nodes) - self.explored)
 
       print("[INFO] complete explore: ", file_relpath)
       print("[INFO] remaining files: ", len(self.files))
@@ -51,7 +56,17 @@ class DependencyGraph():
     return G.nodes()
 
   def save_dot(self, filename):
+    colors = itertools.cycle(COLORS)
+    usedcolors = {}
     G = self.get_graph()
+    for node in G.nodes():
+      key = node.split('/')[0]
+      if key:
+          color = usedcolors.get(key)
+          if not color:
+            color = usedcolors[key] = next(colors)
+          G.nodes[node]['fillcolor'] = color
+          G.nodes[node]['style'] = 'filled'
     agraph = to_agraph(G)
     agraph.layout('dot')
     agraph.write(filename + ".dot")
@@ -149,6 +164,7 @@ def main():
     graph_analyzer.save_org(args.output_name)
   if 'txt' in args.output_format:
     graph_analyzer.save_list(args.output_name)
+
 
 
 if __name__ == '__main__':
